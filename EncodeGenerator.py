@@ -6,11 +6,12 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 from firebase_admin import  storage
+from dotenv import load_dotenv
 
 cred = credentials.Certificate("serviceAccountKey.json")
-firebase_admin.initialize_app(cred,{
-    'databaseURL': "https://studentattendance-d23dc-default-rtdb.firebaseio.com/",
-    'storageBucket': "studentattendance-d23dc.appspot.com"
+firebase_admin.initialize_app(cred, {
+    'databaseURL': os.getenv("FIREBASE_DATABASE_URL"),
+    'storageBucket': os.getenv("FIREBASE_STORAGE_BUCKET")
 })
 
 

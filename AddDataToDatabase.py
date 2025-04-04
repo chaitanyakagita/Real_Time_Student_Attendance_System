@@ -1,12 +1,13 @@
+import os
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+from dotenv import load_dotenv
 
 cred = credentials.Certificate("serviceAccountKey.json")
-firebase_admin.initialize_app(cred,{
-    'databaseURL': "https://studentattendance-d23dc-default-rtdb.firebaseio.com/"
+firebase_admin.initialize_app(cred, {
+    'databaseURL': os.getenv("FIREBASE_DATABASE_URL")
 })
-
 
 ref = db.reference('Students')
 

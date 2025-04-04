@@ -10,13 +10,14 @@ from firebase_admin import db
 from firebase_admin import storage
 from datetime import datetime
 import openpyxl
+from dotenv import load_dotenv
 
 
 #Initializing Firebase & connecting to the Firebase Realtime Database and Storage Bucket.
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': "https://studentattendance-d23dc-default-rtdb.firebaseio.com/",
-    'storageBucket': "studentattendance-d23dc.appspot.com"
+    'databaseURL': os.getenv("FIREBASE_DATABASE_URL"),
+    'storageBucket': os.getenv("FIREBASE_STORAGE_BUCKET")
 })
 
 bucket = storage.bucket()  # Creates a reference to the Firebase Storage bucket, where images are stored.
