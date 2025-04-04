@@ -1,0 +1,23 @@
+# Ignore JSON file with secrets
+serviceAccountKey.json
+
+# Ignore encoded file
+EncodeFile.p
+
+# Ignore attendance Excel file
+Attendance.xlsx
+
+# Ignore Python virtual environments
+venv/
+.venvv/
+env/
+.env/
+
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
+
+# Ignore PyCharm and OS-specific files
+.idea/
+.DS_Store
+Thumbs.db
