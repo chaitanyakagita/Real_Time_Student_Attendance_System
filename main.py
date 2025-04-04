@@ -12,6 +12,8 @@ from datetime import datetime
 import openpyxl
 from dotenv import load_dotenv
 
+# Load environment variables from .env
+load_dotenv()
 
 #Initializing Firebase & connecting to the Firebase Realtime Database and Storage Bucket.
 cred = credentials.Certificate("serviceAccountKey.json")
